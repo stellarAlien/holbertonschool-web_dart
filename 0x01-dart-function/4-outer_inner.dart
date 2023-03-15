@@ -1,6 +1,7 @@
 void outer(String name, String id) {
     String inner() {
-        print("Hello Agent ${name} your id is ${id}");
+        String last_name = name.split(' ')[1][0] + '.';
+        print("Hello Agent ${last_name}${name} your id is ${id}");
         return '';
     }
     inner();
