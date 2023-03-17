@@ -1,10 +1,10 @@
-import './6-password.dart' show Password;
+import '6-password.dart';
 class User extends Password{
   String? name;
   int? age;
   double? height;
   int? id;
-  String? user_password;
+  String? user_password = '';
 
 User({
     required this.id,
@@ -14,7 +14,7 @@ User({
     required String user_password,
   }) : super(password: user_password) {
     this.user_password = user_password;
-    isValid(); 
+    // isValid(); 
   }
 
   Map<String, dynamic> toJson() {
@@ -39,6 +39,6 @@ User({
   @override
   String toString() {
     bool isPasswordValid = this.isValid();
-    return 'User(id: $id, name: $name, age: $age, height: $height, Password: $isPasswordValid)';
+    return 'User(id : $id ,name: $name, age: $age, height: $height, Password: $isPasswordValid)';
   }
 }

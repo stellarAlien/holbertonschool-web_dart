@@ -11,6 +11,7 @@ class Password {
 
   bool isValid() {
     RegExp hasUppercase = RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$');
+    print(this._password);
     return hasUppercase.hasMatch(this._password);
   }
   @override
