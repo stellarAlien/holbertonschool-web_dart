@@ -39,6 +39,6 @@ User({
   @override
   String toString() {
     bool isPasswordValid = this.isValid();
-    return 'User(id : $id ,name: $name, age: $age, height: $height, Password: $isPasswordValid)';
+    return 'User(id : $id ,name: $name, age: $age, height: $height, Password: ${this.isPasswordValid})';
   }
 }
