@@ -4,7 +4,7 @@ class User extends Password{
   int? age;
   double? height;
   int? id;
-  String? user_password = '';
+  String? user_password = 'null';
 
 User({
     required this.id,
@@ -17,28 +17,28 @@ User({
     // isValid(); 
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['age'] = this.age;
-    data['height'] = this.height;
-    return data;
-  }
   static User fromJson(Map<dynamic, dynamic> userJson) {
     return User(
-      id: userJson['id'],
-      name: userJson['name'],
-      age: userJson['age'],
-      height: userJson['height'],
-      user_password: userJson['user_password'],
-    );
+        id: userJson['id'],
+        name: userJson['name'],
+        age: userJson['age'],
+        height: userJson['height'],
+        user_password: '');
+  }
+
+  Map toJson() {
+    return {
+      'id': this.id,
+      'name': this.name,
+      'age': this.age,
+      'height': this.height
+    };
   }
 
 
   @override
   String toString() {
     bool isPasswordValid = this.isValid();
-    return 'User(id : $id ,name: $name, age: $age, height: $height, Password: ${this.isPasswordValid})';
+    return 'User(id : $id ,name: $name, age: $age, height: $height, Password: $isPasswordValid)';
   }
 }
