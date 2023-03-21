@@ -24,7 +24,6 @@ Future<String> loginUser() async {
   try {
     final credentialsValid = await checkCredentials();
      if (credentialsValid) {
-      print('There is a user: $credentialsValid');
       return await greetUser();
     } else {
       print('There is a user: false');
