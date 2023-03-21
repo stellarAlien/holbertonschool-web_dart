@@ -8,7 +8,7 @@ Future<String> fetchUserData() => Future.delayed(
     );
 
 Future<bool> checkCredentials() =>
-    Future.delayed(const Duration(seconds: 2), () => true);
+    Future.delayed(const Duration(seconds: 2), () => false);
 
 Future<String> greetUser() async {
   try {
@@ -23,8 +23,8 @@ Future<String> greetUser() async {
 Future<String> loginUser() async {
   try {
     final credentialsValid = await checkCredentials();
-    print('There is a user: $credentialsValid');
-    if (credentialsValid) {
+     if (credentialsValid) {
+      print('There is a user: $credentialsValid');
       return await greetUser();
     } else {
       print('There is a user: false');
